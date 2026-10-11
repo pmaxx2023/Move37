@@ -37,7 +37,8 @@ Ads pay for themselves only if a click costs less than that.
 ### 1. Put the store online
 
 1. In the GitHub repo, open Settings, then Pages. Set Source to GitHub Actions.
-2. Merge the branch `claude/stoic-babbage-8rzdr4` into `main`. The store deploys on its own.
+2. The repo has no `main` branch yet. On GitHub, open Branches and create `main` from `claude/stoic-babbage-8rzdr4`.
+   Make `main` the default branch. The store deploys on its own.
 3. The store will be at `https://pmaxx2023.github.io/Move37/`.
 4. Optional: buy a domain such as `inktrace.app` or use a Phogold domain. Add it under Settings, then Pages, then Custom domain.
 
