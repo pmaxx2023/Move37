@@ -1,0 +1,101 @@
+  <div class="bench">
+    <div class="left">
+    <section class="film" aria-label="Photo preview">
+      <div class="edge top" aria-hidden="true"><span>PHOGOLD 200</span><span id="edgeFrame">▸ 1</span><span>INK TRACE</span><span id="edgeFrameA">▸ 1A</span></div>
+      <div class="stage" id="stage">
+        <div class="frame" id="frame">
+          <canvas id="after" aria-label="Edited photo"></canvas>
+          <canvas id="before" aria-hidden="true"></canvas>
+          <div class="split-line" aria-hidden="true"></div>
+          <span class="split-tag l" aria-hidden="true">Before</span>
+          <span class="split-tag r" aria-hidden="true">After</span>
+        </div>
+        <div class="busy" id="busy" hidden>Developing…</div>
+      </div>
+      <div class="edge bottom" aria-hidden="true"><span id="edgeLook">GOLDEN HOUR 200</span><span id="edgeStyle">INK TRACE</span><span id="edgeLines">0 LINES</span></div>
+    </section>
+    <div class="compare">
+      <label for="split">Before</label>
+      <input type="range" id="split" min="0" max="100" step="1" value="35" aria-label="Before and after split">
+      <span>After</span>
+    </div>
+    <div class="statusrow">
+      <p class="status" id="status" aria-live="polite">Developing the sample photo…</p>
+      <button type="button" class="btn ghost small" id="replay" hidden>Draw it again</button>
+    </div>
+    </div>
+
+    <aside class="panel" aria-label="Controls">
+      <div class="group upload">
+        <label class="btn primary" for="file">Choose a photo</label>
+        <input type="file" id="file" accept="image/*">
+        <p class="hint">Or drop a photo on the frame, or paste one.</p>
+        <div class="samples" id="samples" role="group" aria-label="Sample photos"></div>
+      </div>
+
+      <div class="group">
+        <div class="label"><span>Film look</span></div>
+        <div class="seg" id="look" role="group" aria-label="Film look">
+          <button type="button" data-v="golden" aria-pressed="true">Golden Hour<small>200 · warm</small></button>
+          <button type="button" data-v="dark" aria-pressed="false">After Dark<small>400 · night</small></button>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="label"><span>Style</span></div>
+        <div class="seg styles" id="style" role="group" aria-label="Style">
+          <button type="button" data-v="ink" aria-pressed="true">Ink trace</button>
+          <button type="button" data-v="storybook" aria-pressed="false">Storybook</button>
+          <button type="button" data-v="oneline" aria-pressed="false">One line</button>
+          <button type="button" data-v="penink" aria-pressed="false">Pen &amp; ink</button>
+          <button type="button" data-v="watercolor" aria-pressed="false">Watercolor</button>
+          <button type="button" data-v="cartoon" aria-pressed="false">Cartoon</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <label class="label" for="lines"><span>Lines</span><output id="linesOut">6</output></label>
+        <input type="range" id="lines" min="1" max="10" step="1" value="6">
+      </div>
+
+      <div class="group">
+        <label class="label" for="weight"><span>Line weight</span><output id="weightOut">5</output></label>
+        <input type="range" id="weight" min="1" max="10" step="1" value="5">
+      </div>
+
+      <div class="group">
+        <label class="label" for="wobble"><span>Hand wobble</span><output id="wobbleOut">5</output></label>
+        <input type="range" id="wobble" min="0" max="10" step="1" value="5">
+      </div>
+
+      <div class="group">
+        <div class="label"><span>Ink color</span></div>
+        <div class="swatches" id="ink" role="group" aria-label="Ink color">
+          <button type="button" class="auto" data-v="auto" aria-pressed="true">Match look</button>
+          <button type="button" data-v="#2a1b3a" style="background:#2a1b3a" aria-label="Plum ink" aria-pressed="false"></button>
+          <button type="button" data-v="#f2c768" style="background:#f2c768" aria-label="Gold ink" aria-pressed="false"></button>
+          <button type="button" data-v="#f6efe2" style="background:#f6efe2" aria-label="White ink" aria-pressed="false"></button>
+          <button type="button" data-v="#b8432f" style="background:#b8432f" aria-label="Red ink" aria-pressed="false"></button>
+        </div>
+      </div>
+
+      <div class="group">
+        <button type="button" class="btn primary" id="save">Save image</button>
+        <p class="hint" id="saveNote"></p>
+        <a class="btn ghost" id="upgrade" href="#pricing" hidden>Get full size, no mark</a>
+      </div>
+
+      <div class="group" id="batchGroup" hidden>
+        <div class="label"><span>Batch</span></div>
+        <label class="btn ghost" for="batchFiles">Process many photos</label>
+        <input type="file" id="batchFiles" accept="image/*" multiple>
+        <p class="hint">Uses the settings above on every photo. You get one zip file.</p>
+      </div>
+
+      <div class="group" id="svgGroup" hidden>
+        <div class="label"><span>Vector</span></div>
+        <button type="button" class="btn ghost" id="saveSvg">Save line art as SVG</button>
+        <p class="hint">Just the lines, as paths. For Cricut pens, laser cutters and design apps.</p>
+      </div>
+    </aside>
+  </div>

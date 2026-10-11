@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank you | Phogold</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+:root { color-scheme: dark; --bench: #141017; --line: #3a2f40; --ink: #f4ecdf; --muted: #b7a9b9; --gold: #e8b64a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bench); color: var(--ink); font: 16px/1.6 "Instrument Sans", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+a { color: var(--gold); }
+.logo { font: 800 22px "Big Shoulders Display", Impact, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+h1 { font: 800 clamp(36px, 7vw, 54px)/1 "Big Shoulders Display", Impact, sans-serif; text-transform: uppercase; margin: 28px 0 16px; }
+h2 { font-size: 19px; margin: 28px 0 4px; }
+p, li { margin: 8px 0; }
+.muted { color: var(--muted); font-size: 14px; }
+</style>
+<script src="config.js"></script>
+</head>
+<body>
+<main>
+<a class="logo" href="./">Phogold</a>
+<h1>Thank you</h1>
+<p>Your order is done. Check your email for the receipt and the download link. It can take a minute to arrive.</p>
+<h2>How to start</h2>
+<ol>
+  <li>Download the zip file from the email and unzip it.</li>
+  <li>Double-click the Ink Trace file. It opens in your web browser.</li>
+  <li>Drop in a photo and press Save image.</li>
+</ol>
+<p>No email after 10 minutes? Check your spam folder. Then reply to the receipt or <a id="help" href="./">contact us</a>.</p>
+<p><a href="./">Back to the store</a></p>
+<script>
+(() => {
+  const cfg = window.STORE || {};
+  if (cfg.supportEmail) document.getElementById("help").href = "mailto:" + cfg.supportEmail;
+  const tier = new URLSearchParams(location.search).get("tier");
+  const label = cfg.conversionLabel && cfg.conversionLabel[tier];
+  if (!label || typeof window.gtag !== "function") return;
+  let sent = false;
+  try { sent = sessionStorage.getItem("conv-" + tier) === "1"; sessionStorage.setItem("conv-" + tier, "1"); } catch {}
+  if (sent) return;
+  window.gtag("event", "conversion", {
+    send_to: cfg.googleAdsId + "/" + label,
+    value: tier === "pro" ? 39 : 19,
+    currency: "USD"
+  });
+})();
+</script>
+</main>
+</body>
+</html>

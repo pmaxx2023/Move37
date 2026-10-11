@@ -1,0 +1,40 @@
+/* Store page around the tool */
+a { color: var(--gold); }
+a.btn { text-decoration: none; }
+.top { max-width: 1180px; margin: 0 auto; padding: 16px 20px 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 20px; }
+.top .logo { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+.top nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--gold); }
+.top nav a.buy { color: var(--gold); font-weight: 600; }
+section.block { max-width: 1180px; margin: 0 auto; padding: 44px 20px 0; }
+section.block h2 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(30px, 5vw, 44px); line-height: 1; margin: 0 0 8px; }
+section.block > p.sub { margin: 0 0 22px; color: var(--muted); max-width: 60ch; }
+.steps, .uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.card { background: var(--bench-2); border: 1px solid var(--line); border-radius: 6px; padding: 18px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.card .num { font-family: var(--font-mono); color: var(--gold); font-size: 12px; letter-spacing: .14em; }
+.prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; align-items: stretch; }
+.price { display: grid; grid-template-rows: auto auto 1fr auto; gap: 12px; }
+.price.pick { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+.price .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); min-height: 1.4em; }
+.price .amt { font-family: var(--font-display); font-weight: 800; font-size: 52px; line-height: 1; }
+.price .amt small { font-family: var(--font-body); font-weight: 400; font-size: 14px; color: var(--muted); margin-left: 6px; }
+.price ul { align-content: start; margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; font-size: 14.5px; }
+.price li::before { content: "✓"; color: var(--gold); margin-right: 8px; }
+.price li.no { color: var(--muted); }
+.price li.no::before { content: "–"; color: var(--muted); }
+.price .btn { width: 100%; text-decoration: none; }
+.price .btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+.fine { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
+details { border-top: 1px solid var(--line); padding: 14px 0; max-width: 760px; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 16px; }
+details p { margin: 10px 0 0; color: var(--muted); }
+footer.foot { max-width: 1180px; margin: 0 auto; padding: 48px 20px 40px; display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--muted); font-size: 13px; }
+footer.foot a { color: var(--muted); }
+.doc { max-width: 760px; margin: 0 auto; padding: 28px 20px 60px; }
+.doc h1 { font-size: clamp(36px, 6vw, 52px); margin-bottom: 18px; }
+.doc h2 { font-size: 20px; margin: 28px 0 6px; }
+.doc p, .doc li { color: var(--ink); }

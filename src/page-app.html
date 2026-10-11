@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{APP_TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+{{TOOL_CSS}}
+.license { max-width: 1180px; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <small>Phogold · {{EDITION_NAME}}</small>
+      <h1>Ink Trace</h1>
+    </div>
+    <p class="lede">Drop in a photo. Pick a film look and a style. Save it at full size. Everything runs on this device. Photos are never uploaded.</p>
+  </header>
+{{TOOL_HTML}}
+</div>
+<p class="license">{{LICENSE_LINE}} Please do not share this file. Thank you for buying it.</p>
+<script>
+const TIER = "{{TIER}}";
+{{SAMPLES_JS}}
+{{ENGINE_JS}}
+{{STORE_JS}}
+</script>
+</body>
+</html>
